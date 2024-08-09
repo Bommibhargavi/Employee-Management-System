@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="welcome">
+        <h1>Welcome to Employee Management</h1>
+        <button id="click" class="btn btn-primary">Click Me!</button>
+    </div>
+    <div class="main-form">
+    <div id="image" style="display: none;">
+        <img src="./image3-removebg-preview.png">
+        <h1><span >10k</span> Solutions!</h1>
+    </div>
+    <div class="container" id="formContainer">
+        
+        
+        <h2>Add Employee <i class='bx bx-user' style='color:#fa9022'  ></i></h2>
+
+        <form id="myForm">
+            <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="firstname">First Name:</label>
+                <input type="text" class="form-control" id="firstname" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="lastname">Last Name:</label>
+                <input type="text" class="form-control" id="lastname" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="gender">Gender:</label>
+                <input type="text" class="form-control" id="gender" required>
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="designation">Designation:</label>
+                <input type="text" class="form-control" id="designation" required>
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="degree">Highest Degree:</label>
+                <input type="text" class="form-control" id="degree" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="year">Year of Passed Out:</label>
+                <input type="number" class="form-control" id="year" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="college">College Name:</label>
+                <input type="text" class="form-control" id="college" required>
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <label for="address">Address:</label>
+                <textarea class="form-control" id="address" name="address" required></textarea>
+                <span class="valid-msg hidden">Enter a valid Address</span>
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="phone">Phone Number:</label>
+                <input type="text" class="form-control" id="phone" required>
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <label for="photo">Photo:</label>
+                <input type="file" class="form-control-file" id="photo" required>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit">Submit </button>
+            <button type="submit" class="btn btn-primary" id="Table">Table</button>
+        
+        </form>
+    </div>
+    </div>
+   
+    <div class="container" id="employeeListContainer">
+        <h2>Employee List</h2>
+        <div class="form-inline mb-3">
+            <input type="text" class="form-control mr-2" id="searchByName" placeholder="Search by Name">
+            <input type="number" class="form-control mr-2" id="filterByAge" placeholder="Filter by Age">
+            <input type="text" class="form-control mr-2" id="filterByDesignation" placeholder="Filter by Designation">
+            <input type="text" class="form-control mr-2" id="filterByCollege" placeholder="Filter by College Name">
+            <button class="btn btn-primary" id="filterButton">Filter</button>
+        </div>
+        <div class="table-container">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Age</th>
+                        <th>Designation</th>
+                        <th>Highest Degree</th>
+                        <th>Year of Passed Out</th>
+                        <th>College Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Photo</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody"></tbody>
+            </table>
+        </div>
+        <nav aria-label="Page navigation example" id="navbar">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#" id="prevPage" style="float: left;">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#" id="nextPage" style="float: right;">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container details-container" id="detailsContainer">
+        <h2>Employee Details <i class='bx bx-user' style='color:#fa9022'  ></i></h2>
+        <div id="employeeDetails"></div>
+        <button id="backToList" class="btn btn-primary">Back</button>
+        <button id="downloadDetails" class="btn btn-primary">Download</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+   <script src="./script.js"></script>
+</body>
+</html>
