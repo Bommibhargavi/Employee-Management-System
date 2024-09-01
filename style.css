@@ -13,8 +13,10 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);     
             overflow: hidden;
             color: black;
+            margin-bottom: 35px;
             
         }
+       
         .main-form{
             display: flex;
         }
@@ -64,7 +66,8 @@
         }
         #formContainer{
             float: right;
-           
+            /* margin: 30px 0px; */
+            margin-top: 20px;
             flex-direction: column;
             align-items: center;
             padding: 30px;
@@ -137,10 +140,10 @@
        }
        .page-link{
         background-color: rgb(236,149,40) !important;
-        margin-top: 5px;
+        margin-top: 25px;
         color: black !important;
         margin-left: 4px;
-        border-radius: 5px;
+        border-radius: 10px;
        }
        #navbar{
        
@@ -195,32 +198,62 @@
       {
         position: relative;
       }
+      #nextPage{
+       padding-left: 35px;
+       padding-right: 35px;
+
+      }
+      #downloadDetails{
+        float: right;
+      }
+      #backToList{
+        padding-left: 35px;
+        padding-right: 35px;
+      }
 
       @media screen and (max-width:740px) {
         body{
             background-image: url("./image9.png");
         }
+        #welcome{
+          /* transform: translateY(100px); */
+          height: 100vh;
+          background-position: center;
+        }
+        #click{
+            margin-top: 300px;
+            margin-left: 80px;
+        }
 
         #welcome h1{
-            background-color: white;
-            font-size: 20px;
+            display: none;
         }
         .main-form{
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
         }
         #formContainer{
             max-width: unset;
-            width: 100%;
+            width: 95%;
         }
         #image{
-            width: 100%;
-            display: flex !important;
+            width: 85%;
+            /* display: flex !important;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            flex-direction: column; */
+        }
+        h1{
+            margin-left: 10px;
+        }
+        #image img{
+            margin-top: 0;
+            margin-left: 0px;
         }
        #detailsContainer{
-        max-width: 100%;
+        max-width: 95%;
        }
         #profile-img{
             height: 15%;
@@ -228,5 +261,15 @@
             right: 20px;
             top: 20px;
         }
+        .form-inline input{
+            margin: 5px;
+        }
+        .form-inline button{
+            float: right !important;
+        }
+        .form-inline{   
+            justify-content: center;
+        }
+       
 
       }
